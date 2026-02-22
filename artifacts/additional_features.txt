@@ -1,0 +1,21 @@
+Added additional features:
+
+1. Contradiction Detection Layer
+Detect when retrieved studies contradict each other.
+
+Resume line: "Implemented contradiction detection layer using semantic similarity to flag conflicting study conclusions, enabling nuanced understanding of contradictory medical evidence."
+
+Implementation:
+
+After retrieval, use embeddings to cluster papers by stance (positive/negative/neutral findings)
+
+If contradictions detected, LLM synthesizes: "3 studies found benefits (2022-2024), while 2 recent studies (2025) found no significant effect..."
+
+2. LLM-as-a-judge evaluation
+
+                        **Metrics Explained:**
+                        - **Relevance:** How well retrieved articles match your query
+                        - **Groundedness:** Whether answer is supported by cited sources
+                        - **Confidence:** Based on citation density and specificity
+                        """)
+

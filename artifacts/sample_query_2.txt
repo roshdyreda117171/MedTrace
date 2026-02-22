@@ -1,0 +1,2 @@
+Search term = Hydroxychloroquine
+Query = Evidence for and against usage of HCQ to treat Covid-19.
