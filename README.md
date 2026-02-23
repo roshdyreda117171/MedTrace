@@ -217,6 +217,16 @@ caloric deficit. Differences stem from intervention duration protocols.
 
 ---
 
+## 🎥 Demo Video
+
+[![Watch the demo](artifacts/Screenshots/MedTrace_banner_image.jpg)](artifacts/Video_Audio_Files/MedTrac_video_recording_compressed_twice.mp4)
+
+*The demo video can be viewed by downloading it. It's just 14 MB in size!*
+
+*FYI, Miss K, a metaphor for someone, is endorsing my product!*
+
+---
+
 ### 2. 📊 RAG Evaluation Metrics Dashboard
 
 Every response includes **LLM-as-judge quality metrics:**
