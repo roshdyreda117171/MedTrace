@@ -223,7 +223,7 @@ caloric deficit. Differences stem from intervention duration protocols.
 
 *The demo video can be viewed by downloading it. It's just 14 MB in size!*
 
-*FYI, Miss K, a metaphor for someone, is endorsing my product!*
+*FYI, Miss K, a metaphor for someone🤔, is endorsing my product!*
 
 ---
 
